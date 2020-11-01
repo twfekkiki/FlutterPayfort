@@ -39,8 +39,12 @@ public class PayFortDelegate implements PluginRegistry.ActivityResultListener, I
 
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        fortCallback.onActivityResult(requestCode, resultCode, data);
-        return true;
+        //super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PayFortPayment.RESPONSE_PURCHASE) {
+            fortCallback.onActivityResult(requestCode, resultCode, data);
+            return true;
+        }
+        return false;
     }
 
     public void requestForPayfortPayment(MethodCall call, MethodChannel.Result result) {
