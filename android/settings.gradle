@@ -1,2 +1,3 @@
 include ':FORTSDKv1.8'
+include ':FORTSDKv1.8'
 rootProject.name = 'payfort_flutter'
